@@ -6,7 +6,6 @@
   "scripts": {
     "build": "browserify --im examples/main.js -o examples/build.js ",
     "dev": "budo examples/main.js:build.js --dir examples --port 8000 --live --open -- --im",
-    "record": "budo machinima_tests/main.js:build.js --dir machinima_tests/scenes --port 8000 --live --open --im",
     "dist": "browserify --im index.js -o dist/super-hands.js -t [ babelify ] && cross-env NODE_ENV=production browserify --im index.js -o dist/super-hands.min.js -t [ babelify ]",
     "lint": "standard -v | snazzy",
     "prepublishOnly": "npm run dist && npm run build",
@@ -14,8 +13,7 @@
     "test": "karma start ./tests/karma.conf.js",
     "test:firefox": "karma start ./tests/karma.conf.js --browsers Firefox",
     "test:chrome": "karma start ./tests/karma.conf.js --browsers Chrome",
-    "test:ci": "TEST_ENV=ci karma start ./tests/karma.conf.js --single-run --browsers Firefox",
-    "test:machinima": "karma start ./machinima_tests/karma.conf.js"
+    "test:ci": "TEST_ENV=ci karma start ./tests/karma.conf.js --single-run --browsers Firefox"
   },
   "repository": {
     "type": "git",
@@ -48,7 +46,6 @@
     "aframe": "^1.4.0",
     "aframe-event-set-component": "^5.0.0",
     "aframe-extras": "^6.1.1",
-    "aframe-machinima-testing": "^0.1.2",
     "aframe-motion-capture-components": "github:wmurphyrd/aframe-motion-capture-components#v0.2.8a",
     "babel-preset-env": "^1.6.0",
     "babel-preset-minify": "^0.5.2",
